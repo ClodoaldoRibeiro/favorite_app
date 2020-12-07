@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        child: Container(
+    return Container(
       color: Colors.black,
       child: Center(
         child: SizedBox(
@@ -12,6 +11,6 @@ class HomeScreen extends StatelessWidget {
             width: 120.00,
             child: Image.asset("assets/images/youtube.png")),
       ),
-    ));
+    );
   }
 }

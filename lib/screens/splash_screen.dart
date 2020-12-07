@@ -11,6 +11,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+
     Future.delayed(Duration(seconds: 5)).then((_) {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (context) => HomeScreen(),
@@ -20,15 +21,14 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        child: Container(
+    return Container(
       color: Colors.white,
       child: Center(
         child: SizedBox(
-            height: 120.00,
-            width: 120.00,
+            height: 130.00,
+            width: 130.00,
             child: Image.asset("assets/images/logo.png")),
       ),
-    ));
+    );
   }
 }
