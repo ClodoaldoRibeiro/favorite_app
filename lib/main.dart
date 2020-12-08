@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'Favorite',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        primaryColor: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: SplashScreen(),

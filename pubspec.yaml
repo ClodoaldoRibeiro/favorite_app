@@ -34,6 +34,7 @@ dependencies:
   shared_preferences: ^0.5.12
   rxdart: ^0.25.0
   bloc_pattern: ^2.5.1
+  flutter_svg: ^0.18.0
 
 dev_dependencies:
   flutter_test:
@@ -56,8 +57,8 @@ flutter:
   #   - images/a_dot_ham.jpeg
 
   assets:
-      - assets/images/logo.png
-      - assets/images/youtube.png
+      - assets/images/
+      - assets/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

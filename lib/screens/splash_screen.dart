@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'home_screen.dart';
 
@@ -27,7 +28,9 @@ class _SplashScreenState extends State<SplashScreen> {
         child: SizedBox(
             height: 130.00,
             width: 130.00,
-            child: Image.asset("assets/images/logo.png")),
+            child: SvgPicture.asset(
+              "assets/icons/logo.svg",
+            )),
       ),
     );
   }
