@@ -27,7 +27,6 @@ class HomeScreen extends StatelessWidget {
                     await showSearch(context: context, delegate: DataSearch());
                 if (result != null)
                   BlocProvider.of<VideosBloc>(context).inSearch.add(result);
-                print(result);
               })
         ],
       ),

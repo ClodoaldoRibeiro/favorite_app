@@ -26,7 +26,6 @@ class VideosBloc implements BlocBase {
 
   void _search(String search) async {
     videos = await api.search(search);
-    print(videos);
     _videosController.sink.add(videos);
   }
 
