@@ -20,6 +20,16 @@ class Api {
   }
 
   /*
+  *   Vai busca a pr[oxima pagina do youtube
+  * */
+  Future<List<Video>> nextPage(String search) async {
+    http.Response response = await http.get(
+        "https://www.googleapis.com/youtube/v3/search?part=snippet&q=$_search&type=video&key=$API_KEY&maxResults=10&pageToken=$_nextToken");
+
+    return decode(response);
+  }
+
+  /*
   * return  List<Video> retorna uma lista de vídeos atraves de um json
   * */
   List<Video> decode(http.Response response) {
