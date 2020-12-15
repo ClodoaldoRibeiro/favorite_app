@@ -7,6 +7,8 @@ import 'package:favorite_app/widgets/video_tile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'favorites_screen.dart';
+
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,6 @@ class HomeScreen extends StatelessWidget {
           Align(
             alignment: Alignment.center,
             child: StreamBuilder<Map<String, Video>>(
-              initialData: {},
               stream: BlocProvider.of<FavoriteBloc>(context).outFav,
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
@@ -35,7 +36,10 @@ class HomeScreen extends StatelessWidget {
           ),
           IconButton(
             icon: Icon(Icons.star_outline),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => FavoritesScreen()));
+            },
           ),
           IconButton(
               icon: Icon(Icons.search_outlined),
