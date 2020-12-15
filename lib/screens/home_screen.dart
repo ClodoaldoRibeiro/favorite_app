@@ -1,6 +1,8 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
+import 'package:favorite_app/bloc/favorite_bloc.dart';
 import 'package:favorite_app/bloc/videos_bloc.dart';
 import 'package:favorite_app/delegates/data_search.dart';
+import 'package:favorite_app/models/video.dart';
 import 'package:favorite_app/widgets/video_tile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +19,20 @@ class HomeScreen extends StatelessWidget {
         elevation: 5,
         backgroundColor: Colors.white,
         actions: [
-          Align(alignment: Alignment.center, child: Text("0")),
+          Align(
+            alignment: Alignment.center,
+            child: StreamBuilder<Map<String, Video>>(
+              initialData: {},
+              stream: BlocProvider.of<FavoriteBloc>(context).outFav,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Text("${snapshot.data.length}");
+                } else {
+                  return Container();
+                }
+              },
+            ),
+          ),
           IconButton(
             icon: Icon(Icons.star_outline),
             onPressed: () {},
